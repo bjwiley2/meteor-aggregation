@@ -1,0 +1,41 @@
+<head>
+  <title>Aggregation</title>
+</head>
+
+<body>
+  {{> layout}}
+</body>
+
+
+<template name="layout">
+  <body>
+    <table>
+      <tr>
+        <th>Averages</th>
+      </tr>
+      {{#each averages}}
+        <tr>
+          <td>
+            {{key}}
+          </td>
+          <td>
+            {{toFixed aggregate}}
+          </td>
+        </tr>
+      {{/each}}
+      <tr>
+        <th>Distribution</th>
+      </tr>
+      {{#each distribution}}
+      <tr>
+        <td>
+          {{key}}
+        </td>
+        <td>
+          {{aggregate}}
+        </td>
+      </tr>
+      {{/each}}
+    </table>
+  </body>
+</template>
