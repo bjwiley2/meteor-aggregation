@@ -1,0 +1,27 @@
+table {
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #999;
+  border-collapse: separate;
+}
+
+th > h1 {
+  background-color: #aaa;
+  padding: 20px;
+}
+
+tr:not(:first-of-type) th {
+  background-color: #ddd;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+td {
+  text-align: right;
+}
+
+button {
+  float: left;
+  margin-top: 20px;
+}

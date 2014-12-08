@@ -1,11 +1,21 @@
+@insertPoint = ->
+
+  randomCharCode = Math.ceil(Math.random() * 10)
+  randomNum = Math.ceil(Math.random() * 100)
+
+  Points.insert
+    character: String.fromCharCode(96 + randomCharCode)
+    n: randomNum
+
+
 Meteor.startup ->
 
-  Points.remove {}
-  i = 0
-  _alphabet = 26
+  @Future = Npm.require "fibers/future"
 
-  while i < _alphabet
+  if Points.find().count() is 0
+    i = 0
 
-    i++
-    n = Math.ceil(Math.random() * _alphabet)
-    Points.insert character: String.fromCharCode(96 + n), n: n
+    while i < 100000
+
+      i++
+      insertPoint()

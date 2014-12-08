@@ -8,25 +8,17 @@
 
 
 <template name="layout">
-  <body>
-    <table>
-      <tr>
-        <th>Averages</th>
-      </tr>
-      {{#each averages}}
-        <tr>
-          <td>
-            {{key}}
-          </td>
-          <td>
-            {{toFixed aggregate}}
-          </td>
-        </tr>
-      {{/each}}
-      <tr>
-        <th>Distribution</th>
-      </tr>
-      {{#each distribution}}
+
+  <table>
+
+    <tr>
+      <th colspan="2"><h1>Pub/Sub</h1></th>
+    </tr>
+
+    <tr>
+      <th colspan="2">Count</th>
+    </tr>
+    {{#each psCount}}
       <tr>
         <td>
           {{key}}
@@ -35,7 +27,89 @@
           {{aggregate}}
         </td>
       </tr>
-      {{/each}}
-    </table>
-  </body>
+    {{/each}}
+
+    <tr>
+      <th colspan="2">Averages</th>
+    </tr>
+    {{#each psAverages}}
+      <tr>
+        <td>
+          {{key}}
+        </td>
+        <td>
+          {{toFixed aggregate}}
+        </td>
+      </tr>
+    {{/each}}
+
+    <tr>
+      <th colspan="2">Distribution</th>
+    </tr>
+    {{#each psDistribution}}
+      <tr>
+        <td>
+          {{key}}
+        </td>
+        <td>
+          {{aggregate}}
+        </td>
+      </tr>
+    {{/each}}
+
+  </table>
+
+
+  <table>
+
+    <tr>
+      <th colspan="2"><h1>Methods</h1></th>
+    </tr>
+
+    <tr>
+      <th colspan="2">Count</th>
+    </tr>
+    {{#each methodCount}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>
+          {{count}}
+        </td>
+      </tr>
+    {{/each}}
+
+    <tr>
+      <th colspan="2">Averages</th>
+    </tr>
+    {{#each methodAverages}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>
+          {{toFixed avg}}
+        </td>
+      </tr>
+    {{/each}}
+
+    <tr>
+      <th colspan="2">Distribution</th>
+    </tr>
+    {{#each methodDistribution}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>
+          {{count}}
+        </td>
+      </tr>
+    {{/each}}
+
+  </table>
+
+  <button type="button" class="btn btn-primary">Add Data</button>
+
 </template>

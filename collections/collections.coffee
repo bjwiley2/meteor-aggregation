@@ -1,3 +1,6 @@
 @Points = new Meteor.Collection "Points"
-@PointAverage = new Meteor.Collection "PointAverage" if Meteor.isClient
-@PointDistribution = new Meteor.Collection "PointDistribution" if Meteor.isClient
+
+if Meteor.isClient
+  @PointAverage = new Meteor.Collection "PointAverage"
+  @PointDistribution = new Meteor.Collection "PointDistribution"
+  @PointCount = new Meteor.Collection "PointCount"
