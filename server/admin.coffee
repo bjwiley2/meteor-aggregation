@@ -15,7 +15,7 @@ Meteor.startup ->
   if Points.find().count() is 0
     i = 0
 
-    while i < 100000
+    while i < 50000
 
       i++
       insertPoint()
